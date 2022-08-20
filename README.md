@@ -11,9 +11,9 @@ opkg update<br>
 opkg install iptables-mod-hashlimit iptables-mod-iprange
 
 ### Ready to Install
-git clone https://github.com/tegohsx/mulimiter.git 
-cd mulimiter
-sh installer
+git clone https://github.com/tegohsx/mulimiter.git <br>
+cd mulimiter<br>
+sh ./installer<br>
 
 ## WebUI Access
 http://ipaddress/mulimiter<br>
