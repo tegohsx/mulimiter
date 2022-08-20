@@ -22,6 +22,8 @@ git clone https://github.com/tegohsx/mulimiter.git <br>
 cd mulimiter<br>
 sh ./installer<br>
 
+##### if you have problem with git you can download this repo as zip, then extract and run the installer
+
 ## WebUI Access
 http://ipaddress/mulimiter<br>
 Default password: 1234
