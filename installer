@@ -1,0 +1,19 @@
+#bin/sh
+
+mkdir /root/.mulimiter
+mkdir /www/mulimiter
+
+touch /root/.mulimiter/save
+cp -R ./file/run /root/.mulimiter/run
+cp -R ./file/run.php /root/.mulimiter/run.php
+cp -R ./file/ui/* /www/mulimiter/
+echo "JDJ5JDEwJDRRdC85ZlpseHNOeTFrZEJ2Nms1ai5tQ0xUVVliWnJRaVpWamlzVWxGcHZWOWxBNWx5VDR5" > /root/.mulimiter/.userpass
+echo "1.0" > /root/.mulimiter/version
+php-cgi firewall-config > /dev/null
+
+echo "SUCCESS!!!"
+echo ""
+echo "WebUI: http://ip/mulimiter"
+echo "Default password: 1234"
+echo ""
+
