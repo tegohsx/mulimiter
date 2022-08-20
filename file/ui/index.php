@@ -176,7 +176,7 @@ if ($_SESSION[$app_name]['logedin'] == true) {
     <body style="background-color: #dedede;">
         <div class="wraper py-4 bg-white px-3">
             <h1 class="text-center">MulImiter</h1>
-            <p class="text-center mb-4">The GUI bandwith limter for iptables-mod-hashlimit</p>
+            <p class="text-center mb-4">The GUI bandwidth limiter for iptables-mod-hashlimit</p>
             <hr>
             <div class="mb-3 d-flex justify-content-center" style="gap: .5rem;">
                 <button onclick="showHome()" class="btn btn-success">Home</button>
@@ -329,7 +329,7 @@ if ($_SESSION[$app_name]['logedin'] == true) {
             </div>
             <div class="text-center d-none" id="about-page">
                 <h2>About</h2>
-                <p>MulImiter, The GUI bandwith limter for iptables-mod-hashlimit.</p>
+                <p>MulImiter, The GUI bandwidth limiter for iptables-mod-hashlimit.</p>
                 <p>Required iptables-mod-iprange, iptables-mod-hashlimit.</p>
                 <p>Source Code: https://github.com/tegohsx/mulimiter/</p>
                 <p class="mt-4">
@@ -518,7 +518,7 @@ if ($_SESSION[$app_name]['logedin'] == true) {
     <body style="background-color: #dedede;">
         <div class="wraper py-4 bg-white px-3 text-center">
             <h1 class="text-center">MulImiter</h1>
-            <p class="text-center mb-4">The GUI bandwith limter for iptables-mod-hashlimit</p>
+            <p class="text-center mb-4">The GUI bandwidth limiter for iptables-mod-hashlimit</p>
             <hr class="mb-5">
             <form id="mulimiterFormLogin">
                 <div class="mb-5">
