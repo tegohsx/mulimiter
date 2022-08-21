@@ -27,7 +27,7 @@ iptables-mod-iprange
 2. Clone this repo then run installer using command below
 
 	```
-	git clone https://github.com/tegohsx/mulimiter.git && cd mulimiter && sh ./installer<br>
+	git clone https://github.com/tegohsx/mulimiter.git && cd mulimiter && sh ./installer
 	```
 
 	> Note: if you have problem with git you can download this repo as zip, then extract and run the installer
