@@ -1,18 +1,27 @@
-#bin/sh
+#!/bin/sh
+# Based codes by Teguh Santoso
+# Improved by Helmi Amirudin <helmiau.com>
 
-mkdir /root/.mulimiter
-mkdir /www/mulimiter
+opkg update
+if [[ $(opkg list-installed | grep -c "^iptables-mod-hashlimit") == "0" ]]; then echo -e "Pkg iptables-mod-hashlimit not available, installing..." && opkg install iptables-mod-hashlimit; fi
+if [[ $(opkg list-installed | grep -c "^iptables-mod-iprange") == "0" ]]; then echo -e "Pkg iptables-mod-iprange not available, installing..." && opkg install iptables-mod-iprange; fi
 
-touch /root/.mulimiter/save
-cp -R ./file/run /root/.mulimiter/run
-chmod 755 /root/.mulimiter/run
-cp -R ./file/run.php /root/.mulimiter/run.php
-cp -R ./file/ui/* /www/mulimiter/
-echo "JDJ5JDEwJDRRdC85ZlpseHNOeTFrZEJ2Nms1ai5tQ0xUVVliWnJRaVpWamlzVWxGcHZWOWxBNWx5VDR5" > /root/.mulimiter/.userpass
-echo "1.0" > /root/.mulimiter/version
+rtml="/root/.mulimiter"
+wwml="/www/mulimiter"
+
+[ ! -d "$rtml" ] && mkdir -p "$rtml"
+[ ! -d "$wwml" ] && mkdir -p "$wwml"
+
+touch "$rtml/save"
+cp -R ./file/run "$rtml/run"
+chmod 755 "$rtml/run"
+cp -R ./file/run.php "$rtml/run.php"
+cp -R ./file/ui/* "$wwml/"
+echo "JDJ5JDEwJDRRdC85ZlpseHNOeTFrZEJ2Nms1ai5tQ0xUVVliWnJRaVpWamlzVWxGcHZWOWxBNWx5VDR5" > "$rtml/.userpass"
+echo "1.0" > "$rtml/version"
 php-cgi firewall-config > /dev/null
 
-echo "SUCCESS!!!"
+echo "Installation SUCCESS!!!"
 echo ""
 echo "WebUI: http://ip/mulimiter"
 echo "Default password: 1234"
