@@ -5,6 +5,7 @@ mkdir /www/mulimiter
 
 touch /root/.mulimiter/save
 cp -R ./file/run /root/.mulimiter/run
+chmod 755 /root/.mulimiter/run
 cp -R ./file/run.php /root/.mulimiter/run.php
 cp -R ./file/ui/* /www/mulimiter/
 echo "JDJ5JDEwJDRRdC85ZlpseHNOeTFrZEJ2Nms1ai5tQ0xUVVliWnJRaVpWamlzVWxGcHZWOWxBNWx5VDR5" > /root/.mulimiter/.userpass
