@@ -1,5 +1,5 @@
 ## MulImiter
-OpenWrt bandwidth limiter through iptables firewall with php GUI
+OpenWrt bandwidth limiter through iptables firewall with PHP GUI
 
 <img src="https://user-images.githubusercontent.com/101353193/185755988-eb688396-1675-4000-9433-6c8e783a77b8.png" width="45%"> <img src="https://user-images.githubusercontent.com/101353193/185755996-eb7b5e77-0818-44a1-8f54-eb2d45a4d3ff.png" width="45%">
 
@@ -21,7 +21,7 @@ iptables-mod-iprange
 1. Install required dependencies
 
 	```
-	opkg update && opkg install iptables-mod-hashlimit iptables-mod-iprange git
+	opkg update && opkg install iptables-mod-hashlimit iptables-mod-iprange git git-http
 	```
 
 2. Clone this repo then run installer using command below
