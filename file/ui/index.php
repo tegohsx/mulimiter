@@ -167,7 +167,7 @@ if ($_SESSION[$app_name]['logedin'] == true) {
         <style>
             .wraper {
                 margin: auto;
-                max-width: 720px;
+                max-width: 100%;
             }
         </style>
         <script src="asset/jquery.min.js"></script>
@@ -356,6 +356,19 @@ if ($_SESSION[$app_name]['logedin'] == true) {
             <p class="text-center">Author: &nbsp;&nbsp;<a href="https://github.com/tegohsx/" target="_blank">Tegohsx</a></p>
         </div>
         <script>
+
+            if(!inIframe()){
+                $('.wraper').css({maxWidth: '720px'})
+            }
+
+            function inIframe () {
+                try {
+                    return window.self !== window.top;
+                } catch (e) {
+                    return true;
+                }
+            }
+
             $("#mulimiterFormAdd").on('submit', function(e) {
                 e.preventDefault();
                 $(this).find('[type=submit]').val('Adding...').prop('disabled', true)
@@ -509,7 +522,7 @@ if ($_SESSION[$app_name]['logedin'] == true) {
         <style>
             .wraper {
                 margin: auto;
-                max-width: 720px;
+                max-width: 100%;
             }
         </style>
         <script src="asset/jquery.min.js"></script>
@@ -531,6 +544,18 @@ if ($_SESSION[$app_name]['logedin'] == true) {
             <p class="text-center">Author: &nbsp;&nbsp;<a href="https://github.com/tegohsx/" target="_blank">Tegohsx</a></p>
         </div>
         <script>
+
+            if(!inIframe()){
+                $('.wraper').css({maxWidth: '720px'})
+            }
+
+            function inIframe () {
+                try {
+                    return window.self !== window.top;
+                } catch (e) {
+                    return true;
+                }
+            }
             $("#mulimiterFormLogin").on('submit', function(e) {
                 e.preventDefault();
                 $(this).find('[type=submit]').val('Loging in...').prop('disabled', true)
