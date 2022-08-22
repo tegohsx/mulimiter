@@ -167,7 +167,7 @@ if ($_SESSION[$app_name]['logedin'] == true) {
         <style>
             .wraper {
                 margin: auto;
-                max-width: 100%;
+                max-width: 720px;
             }
         </style>
         <script src="asset/jquery.min.js"></script>
