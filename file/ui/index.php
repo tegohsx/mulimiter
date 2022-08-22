@@ -353,7 +353,7 @@ if ($_SESSION[$app_name]['logedin'] == true) {
                 </form>
             </div>
             <hr>
-            <p class="text-center">Author: &nbsp;&nbsp;<a href="https://github.com/tegohsx/">Tegohsx</a></p>
+            <p class="text-center">Author: &nbsp;&nbsp;<a href="https://github.com/tegohsx/" target="_blank">Tegohsx</a></p>
         </div>
         <script>
             $("#mulimiterFormAdd").on('submit', function(e) {
@@ -528,7 +528,7 @@ if ($_SESSION[$app_name]['logedin'] == true) {
                 </div>
             </form>
             <hr>
-            <p class="text-center">Author: &nbsp;&nbsp;<a href="https://github.com/tegohsx/">Tegohsx</a></p>
+            <p class="text-center">Author: &nbsp;&nbsp;<a href="https://github.com/tegohsx/" target="_blank">Tegohsx</a></p>
         </div>
         <script>
             $("#mulimiterFormLogin").on('submit', function(e) {
