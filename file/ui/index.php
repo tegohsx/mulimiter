@@ -314,12 +314,15 @@ if ($_SESSION[$app_name]['logedin'] == true) {
                                 $uspeed         = $xurule[9];
                         ?>
                                 <tr>
-                                    <td><?= $iprange ?></td>
-                                    <td><?= str_replace('kb', ' kB', $dspeed) ?></td>
-                                    <td><?= str_replace('kb', ' kB', $uspeed) ?></td>
-                                    <td><?= $time ?></td>
-                                    <td><?= $weekdays ?></td>
-                                    <td><button type="button" class="btn btn-danger btn-sm" data-drule="<?= base64_encode($ls) ?>" data-urule="<?= base64_encode($urule) ?>" onclick="deleteRule(this)">Delete</button></td>
+                                    <td><span id="textIpRange_<?= $i ?>"><?= $iprange ?></span></td>
+                                    <td><span id="textDSpeed_<?= $i ?>"><?= str_replace('kb', ' kB', $dspeed) ?></span></td>
+                                    <td><span id="textUSpeed_<?= $i ?>"><?= str_replace('kb', ' kB', $uspeed) ?></span></td>
+                                    <td><span id="textTime_<?= $i ?>"><?= $time ?></span></td>
+                                    <td><span id="textWeekdays_<?= $i ?>"><?= $weekdays ?></span></td>
+                                    <td>
+                                        <button type="button" class="btn btn-success btn-sm" data-drule="<?= base64_encode($ls) ?>" data-urule="<?= base64_encode($urule) ?>" onclick="editRule(this)">Edit</button>
+                                        <button type="button" class="btn btn-danger btn-sm" data-drule="<?= base64_encode($ls) ?>" data-urule="<?= base64_encode($urule) ?>" onclick="deleteRule(this)">Delete</button>
+                                    </td>
                                 </tr>
                         <?php }
                         }
@@ -357,11 +360,15 @@ if ($_SESSION[$app_name]['logedin'] == true) {
         </div>
         <script>
 
-            if(!inIframe()){
-                $('.wraper').css({maxWidth: '720px'})
+            let formEditType = 'add'
+
+            if (!inIframe()) {
+                $('.wraper').css({
+                    maxWidth: '720px'
+                })
             }
 
-            function inIframe () {
+            function inIframe() {
                 try {
                     return window.self !== window.top;
                 } catch (e) {
@@ -406,6 +413,30 @@ if ($_SESSION[$app_name]['logedin'] == true) {
                     }
                 })
             })
+
+            function editRule(el) {
+                let drule = $(el).attr('data-drule')
+                let urule = $(el).attr('data-urule')
+                let iprange = $(el).closest('tr').find('[id^=textIpRange_]').text().split(' - ')
+                let iprange0 = iprange[0],
+                    iprange1 = iprange[1] || '',
+                    dspeed = parseInt($(el).closest('tr').find('[id^=textDSpeed_]').text()),
+                    uspeed = parseInt($(el).closest('tr').find('[id^=textUSpeed_]').text()),
+                    time_ = $(el).closest('tr').find('[id^=textTime_]').text().split(' - '),
+                    timestart = time_[0] == 'All time' ? '' : (time_[0] || ''),
+                    timestop = time_[1] || '',
+                    weekdays = $(el).closest('tr').find('[id^=textWeekdays_]').text().split(',')
+
+                $('#mulimiterFormAdd').find('[name=iprange0]').val(iprange0)
+                $('#mulimiterFormAdd').find('[name=iprange1]').val(iprange1)
+                $('#mulimiterFormAdd').find('[name=dspeed]').val(dspeed)
+                $('#mulimiterFormAdd').find('[name=uspeed]').val(uspeed)
+                $('#mulimiterFormAdd').find('[name=timestart]').val(timestart)
+                $('#mulimiterFormAdd').find('[name=timestop]').val(timestop)
+
+                $('#mulimiterFormAdd').find('[type=submit]').after(`<input id="btnCancelEdit" type="reset" class="btn btn-success btn-sm" value="Reset">`)
+
+            }
 
             function deleteRule(el) {
                 if (confirm('Delete this rule?')) {
@@ -544,12 +575,13 @@ if ($_SESSION[$app_name]['logedin'] == true) {
             <p class="text-center">Author: &nbsp;&nbsp;<a href="https://github.com/tegohsx/" target="_blank">Tegohsx</a></p>
         </div>
         <script>
-
-            if(!inIframe()){
-                $('.wraper').css({maxWidth: '720px'})
+            if (!inIframe()) {
+                $('.wraper').css({
+                    maxWidth: '720px'
+                })
             }
 
-            function inIframe () {
+            function inIframe() {
                 try {
                     return window.self !== window.top;
                 } catch (e) {
